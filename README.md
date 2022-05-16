@@ -84,6 +84,8 @@ Before running project install Java 11+ and set JAVA_HOME as enviroment variable
 After running project you can visit http://localhost:8080/swagger-ui/index.html for open API specification.
 ## API endpoints
 
+You can find example usage of all endpoints here (https://github.com/sevimdemir/readingisgood/blob/main/Reading_is_good.postman_collection)
+
 ### User Controller
 
 #### Login to the system
