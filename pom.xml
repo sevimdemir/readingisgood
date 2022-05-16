@@ -19,6 +19,9 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <jwt.version>0.9.1</jwt.version>
         <jaxb.version>2.3.1</jaxb.version>
+        <mockitoall.version>1.10.19</mockitoall.version>
+        <wimdeblauwe.version>2.1.0</wimdeblauwe.version>
+        <javafaker.version>0.15</javafaker.version>
     </properties>
     <dependencies>
         <dependency>
@@ -81,6 +84,22 @@
             <artifactId>jaxb-api</artifactId>
             <version>${jaxb.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockitoall.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.wimdeblauwe</groupId>
+            <artifactId>error-handling-spring-boot-starter</artifactId>
+            <version>${wimdeblauwe.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -110,13 +129,11 @@
                             <artifactId>lombok</artifactId>
                             <version>1.18.4</version>
                         </path>
-                        <!-- This is needed when using Lombok 1.18.16 and above -->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok-mapstruct-binding</artifactId>
                             <version>0.2.0</version>
                         </path>
-
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>

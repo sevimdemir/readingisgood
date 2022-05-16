@@ -19,7 +19,7 @@ public class StatisticController {
 
     private final IStatisticService statisticService;
 
-    @GetMapping("/mothly")
+    @GetMapping("/monthly")
     @ApiOperation(value = "gets monthly statistics")
     public ResponseEntity<JsonResponse> getAll() {
         return JsonResponse.success(statisticService.findAll()).toResponseEntity(HttpStatus.OK);

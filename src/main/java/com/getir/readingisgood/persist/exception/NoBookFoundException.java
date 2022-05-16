@@ -1,4 +1,4 @@
-package com.getir.readingisgood.exception;
+package com.getir.readingisgood.persist.exception;
 
 public class NoBookFoundException extends BaseException {
 

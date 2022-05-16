@@ -13,7 +13,7 @@ public class StatisticBuilder {
         stat.setMonth(month);
         stat.setOrderCount(0L);
         stat.setRevenue(BigDecimal.ZERO);
-        stat.setOrderCount(0L);
+        stat.setSoldBookCount(0L);
     }
 
     public Statistic build() {

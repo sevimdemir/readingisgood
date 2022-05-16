@@ -1,8 +1,8 @@
 package com.getir.readingisgood.service.impl;
 
-import com.getir.readingisgood.exception.BaseException;
-import com.getir.readingisgood.exception.NoBookFoundException;
-import com.getir.readingisgood.exception.NotEnoughCopyException;
+import com.getir.readingisgood.persist.exception.BaseException;
+import com.getir.readingisgood.persist.exception.NoBookFoundException;
+import com.getir.readingisgood.persist.exception.NotEnoughCopyException;
 import com.getir.readingisgood.persist.model.Book;
 import com.getir.readingisgood.persist.repository.IBookRepository;
 import com.getir.readingisgood.service.IBookService;
@@ -48,6 +48,15 @@ public class BookService implements IBookService {
             throw new NotEnoughCopyException(id, book.getStock());
         }
         book.setStock(book.getStock() - quantity);
+        return bookRepository.save(book);
+    }
+
+    @Override
+    public Book updateBook(Book book) throws BaseException {
+        Optional<Book> bookOptional = bookRepository.findById(book.getId());
+        if (bookOptional.isEmpty()) {
+            throw new NoBookFoundException(book.getId());
+        }
         return bookRepository.save(book);
     }
 }

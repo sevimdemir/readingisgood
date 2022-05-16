@@ -1,10 +1,8 @@
 package com.getir.readingisgood.utils.mapper;
 
-import com.getir.readingisgood.controller.form.BookForm;
-import com.getir.readingisgood.controller.form.OrderItemForm;
-import com.getir.readingisgood.controller.form.UserForm;
-import com.getir.readingisgood.controller.form.UserLoginForm;
+import com.getir.readingisgood.controller.form.*;
 import com.getir.readingisgood.dto.LoginDto;
+import com.getir.readingisgood.dto.UserDto;
 import com.getir.readingisgood.persist.model.Book;
 import com.getir.readingisgood.persist.model.OrderDetail;
 import com.getir.readingisgood.persist.model.User;
@@ -14,12 +12,12 @@ import org.mapstruct.Mapper;
 public interface ObjectMapper {
 
     /**
-     * maps @User object to @UserForm Object
+     * maps @User object to @UserDto object
      *
      * @param user
      * @return
      */
-    UserForm userToForm(User user);
+    UserDto userToDto(User user);
 
     /**
      * maps @UserForm object to @User object
@@ -44,6 +42,14 @@ public interface ObjectMapper {
      * @return
      */
     Book formToBook(BookForm form);
+
+    /**
+     * maps @BookForm to @Book
+     *
+     * @param form
+     * @return
+     */
+    Book updateFormToBook(BookUpdateForm form);
 
     /**
      * maps @Book to @BookForm

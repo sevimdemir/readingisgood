@@ -2,9 +2,9 @@ package com.getir.readingisgood.service;
 
 import com.getir.readingisgood.dto.LoginDto;
 import com.getir.readingisgood.dto.TokenDto;
-import com.getir.readingisgood.exception.BaseException;
-import com.getir.readingisgood.exception.LoginFailedException;
-import com.getir.readingisgood.exception.UserAlreadyExistsException;
+import com.getir.readingisgood.persist.exception.BaseException;
+import com.getir.readingisgood.persist.exception.LoginFailedException;
+import com.getir.readingisgood.persist.exception.UserAlreadyExistsException;
 import com.getir.readingisgood.persist.model.User;
 
 public interface IUserService {

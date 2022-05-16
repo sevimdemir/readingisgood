@@ -1,6 +1,6 @@
 package com.getir.readingisgood.service;
 
-import com.getir.readingisgood.exception.BaseException;
+import com.getir.readingisgood.persist.exception.BaseException;
 import com.getir.readingisgood.persist.model.Book;
 
 import java.util.List;
@@ -13,4 +13,6 @@ public interface IBookService {
     Book createBook(Book book);
 
     Book sellBook(String id, Integer quantity) throws BaseException;
+
+    Book updateBook(Book book) throws BaseException;
 }
