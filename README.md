@@ -1,3 +1,4 @@
+
 # Reading is good
 
 #### Online book retail API
@@ -10,107 +11,51 @@ http://localhost:8080/
 
 Server runs with Spring-Security using Bearer Token authentication. Email will be used as `user_name`
 
-#### It has 4 different controller(User, Book, Order, Statistic)
+####  It has 4 different controller(User, Book, Order, Statistic)
 
 - UserController - login/signup and listing user's orders
 - OrderController - create new orders
 - BookController - Crud operations for books
 - StatisticController - display the monthly Statistics
 
-#### DB structure
-
+####  DB structure
 ```javascript
-"users"
-:
-{
-    "id"
-:
-    "String",
-        "firstName"
-:
-    "String",
-        "lastName"
-:
-    "String",
-        "email"
-:
-    "String"
+"users" : {
+    "id": "String",
+    "firstName": "String",
+    "lastName": "String",
+    "email": "String"
 }
 ```
-
 ```javascript
-"books"
-:
-{
-    "id"
-:
-    "String",
-        "name"
-:
-    "String",
-        "desc"
-:
-    "String",
-        "price"
-:
-    "BigDecimal",
-        "stock"
-:
-    "Integer"
+"books" : {
+    "id": "String",
+    "name": "String",
+    "desc": "String",
+    "price": "BigDecimal",
+    "stock": "Integer"
 }
 ```
-
 ```javascript
-"orders"
-:
-{
-    "id"
-:
-    "String",
-        "userId"
-:
-    "String",
-        "amount"
-:
-    "BigDecimal",
-        "creationDate"
-:
-    "Date",
-        "orderDetails"
-:
-    [
-        "bookId"
-:
-    "String",
-        "quantity"
-:
-    "Integer"
-]
+"orders" : {
+    "id": "String",
+    "userId": "String",
+    "amount": "BigDecimal",
+    "creationDate": "Date",
+    "orderDetails": [
+        "bookId": "String",
+        "quantity": "Integer"
+    ]
 }
 ```
-
 ```javascript
-"statistics"
-:
-{
-    "id"
-:
-    "String",
-        "orderCount"
-:
-    "Long",
-        "revenue"
-:
-    "BigDecimal",
-        "soldBookCount"
-:
-    "Long",
-        "month"
-:
-    "Integer",
-        "year"
-:
-    "Integer"
+"statistics" : {
+    "id": "String",
+    "orderCount": "Long",
+    "revenue": "BigDecimal",
+    "soldBookCount": "Long",
+    "month": "Integer",
+    "year": "Integer"
 }
 ```
 
@@ -121,6 +66,7 @@ Server runs with Spring-Security using Bearer Token authentication. Email will b
 * Spring Security with JWT
 * MongoDB
 * Lombok, mapstruct, swagger, mockito, faker
+
 
 ## Setup & Run
 
@@ -136,7 +82,6 @@ Before running project install Java 11+ and set JAVA_HOME as enviroment variable
 ```
 
 After running project you can visit http://localhost:8080/swagger-ui/index.html for open API specification.
-
 ## API endpoints
 
 ### User Controller
@@ -151,6 +96,7 @@ After running project you can visit http://localhost:8080/swagger-ui/index.html 
 | :-------- | :------- | :------------------------- |
 | `email` | `string` | **Required**. email of user. |
 | `password` | `string` | **Required**. password of user. |
+
 
 #### Creates new user
 
@@ -175,6 +121,7 @@ After running project you can visit http://localhost:8080/swagger-ui/index.html 
 | :-------- | :------- | :------------------------- |
 | `page` | `number` | **Required**. page index of orders |
 | `size` | `number` | **Required**. page window size of the orders. |
+
 
 ### Book Controller
 
@@ -220,6 +167,7 @@ After running project you can visit http://localhost:8080/swagger-ui/index.html 
 | `desc` | `string` | **Required**. new Description of the book. |
 | `price` | `number` | **Required**. new price of the book. |
 | `stock` | `number` | **Required**. new available number of book. |
+
 
 ### Order Controller
 
@@ -268,6 +216,8 @@ After running project you can visit http://localhost:8080/swagger-ui/index.html 
 ```http
   GET /api/v1/stat/monthly
 ```
+
+
 
 ## Test Coverage
 
