@@ -63,6 +63,11 @@ public class UserService implements IUserService {
         return userOptional.get();
     }
 
+    /**
+     * Returns the currently logged in user
+     * @return
+     * @throws BaseException
+     */
     @Override
     public User getCurrentUser() throws BaseException {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication()

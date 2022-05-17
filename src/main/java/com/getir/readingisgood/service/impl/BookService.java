@@ -37,6 +37,15 @@ public class BookService implements IBookService {
         return bookRepository.save(book);
     }
 
+    /**
+     * This methods checks availability of the book
+     * and controls to remaining count.
+     * If there is enough book make the dropping of the stock
+     * @param id
+     * @param quantity
+     * @return
+     * @throws BaseException
+     */
     @Override
     public Book sellBook(String id, Integer quantity) throws BaseException {
         Optional<Book> bookOptional = bookRepository.findById(id);

@@ -40,6 +40,13 @@ public class OrderService implements IOrderService {
     private final MongoTemplate mongoTemplate;
     private final ReentrantLock locker;
 
+    /**
+     * For current user orders calculate the total amount
+     * and place order
+     * @param orderDetails
+     * @return
+     * @throws BaseException
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Order createOrder(List<OrderDetail> orderDetails) throws BaseException {

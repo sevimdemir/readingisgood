@@ -18,6 +18,10 @@ public class StatisticService implements IStatisticService {
 
     private final IStatisticRepository statisticRepository;
 
+    /**
+     * After order created it increases the stats of the related month/year
+     * @param order
+     */
     @Override
     public void orderCreated(Order order) {
         Calendar calendar = Calendar.getInstance();
